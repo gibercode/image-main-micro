@@ -4,12 +4,16 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 module.exports = {
   entry: "./src/index.tsx",
   output: {
-    publicPath: "http://localhost:3000/", // Cambiar según el puerto del proyecto
+    filename: "[name].[contenthash].js",
+    path: path.resolve(__dirname, "dist"),
+    publicPath: "/",
+    // publicPath: "http://localhost:3000/", // Develop
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
   },
-  mode: "development",
+
+  mode: "production",
   devServer: {
     hot: true,
     port: 3000,
