@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 
 module.exports = {
-  entry: "./src/bootstrap.tsx",
+  entry: "./src/index.tsx",
   output: {
     filename: "[name].[contenthash].js",
     publicPath: "/",
