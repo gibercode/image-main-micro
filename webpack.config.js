@@ -1,20 +1,22 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const path = require("path");
 
 module.exports = {
-  entry: "./src/bootstrap.tsx",
+  entry: "./src/index.tsx",
   output: {
-    filename: "[name].[contenthash].js",
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "dist"),
     publicPath: "/",
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
   },
-
   mode: "production",
   devServer: {
     hot: true,
     port: 3000,
+    historyApiFallback: true,
   },
   output: {
     publicPath: "auto",
@@ -37,6 +39,7 @@ module.exports = {
       },
     ],
   },
+
   plugins: [
     new ModuleFederationPlugin({
       name: "container",
