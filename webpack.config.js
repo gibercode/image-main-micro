@@ -3,7 +3,7 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const path = require("path");
 
 module.exports = {
-  entry: "./src/index.tsx",
+  entry: "./src/bootstrap.tsx",
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
@@ -43,7 +43,6 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       name: "container",
-
       shared: {
         react: {
           singleton: true,
