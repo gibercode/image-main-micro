@@ -42,10 +42,10 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       name: "container", // Cambiar según el proyecto (searchBar, searchResults)
-      remotes: {
-        searchBar: "searchBar@http://localhost:3001/remoteEntry.js",
-        list: "list@http://localhost:3002/remoteEntry.js",
-      },
+      // remotes: {
+      //   searchBar: "searchBar@http://localhost:3001/remoteEntry.js",
+      //   list: "list@http://localhost:3002/remoteEntry.js",
+      // },
       shared: {
         react: {
           singleton: true, // Asegúrate de que sea singleton
