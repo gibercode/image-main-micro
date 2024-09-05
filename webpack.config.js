@@ -5,9 +5,7 @@ module.exports = {
   entry: "./src/bootstrap.tsx",
   output: {
     filename: "[name].[contenthash].js",
-    // path: path.resolve(__dirname, "dist"),
     publicPath: "/",
-    // publicPath: "http://localhost:3000/", // Develop
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
@@ -35,25 +33,22 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"], // Aplica loaders de CSS
+        use: ["style-loader", "css-loader"],
       },
     ],
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "container", // Cambiar según el proyecto (searchBar, searchResults)
-      // remotes: {
-      //   searchBar: "searchBar@http://localhost:3001/remoteEntry.js",
-      //   list: "list@http://localhost:3002/remoteEntry.js",
-      // },
+      name: "container",
+
       shared: {
         react: {
-          singleton: true, // Asegúrate de que sea singleton
-          eager: true, // Esto permite la carga eager
+          singleton: true,
+          eager: true,
         },
         "react-dom": {
           singleton: true,
-          eager: true, // Lo mismo para react-dom
+          eager: true,
         },
       },
     }),
