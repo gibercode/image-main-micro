@@ -1,7 +1,7 @@
 import React from "react";
 import { MainLayout } from "./components";
-const SearchBar = React.lazy(() => import("searchBar/SearchBar"));
 import "./styles.css";
+const SearchBar = React.lazy(() => import("searchBar/SearchBar"));
 
 const App = () => {
   return (

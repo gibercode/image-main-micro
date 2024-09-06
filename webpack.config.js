@@ -44,7 +44,7 @@ module.exports = {
       name: "container",
       remotes: {
         searchBar:
-          "searchBar@https://image-search-micro-rfcr-mga2zwg2t-gibercodes-projects.vercel.app/remoteEntry.js",
+          "searchBar@https://image-search-micro-rfcr.vercel.app/remoteEntry.js",
       },
       shared: {
         react: {
