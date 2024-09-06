@@ -3,7 +3,7 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const path = require("path");
 
 module.exports = {
-  entry: "./src/bootstrap.tsx",
+  entry: "./src/index.tsx",
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
@@ -39,10 +39,13 @@ module.exports = {
       },
     ],
   },
-
   plugins: [
     new ModuleFederationPlugin({
       name: "container",
+      remotes: {
+        searchBar:
+          "searchBar@https://image-search-micro-rfcr-mga2zwg2t-gibercodes-projects.vercel.app/remoteEntry.js",
+      },
       shared: {
         react: {
           singleton: true,
