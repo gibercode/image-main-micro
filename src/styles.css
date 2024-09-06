@@ -12,3 +12,9 @@
     width: 85vw;
     max-width: 81.25rem;
 }
+
+.spinnerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
