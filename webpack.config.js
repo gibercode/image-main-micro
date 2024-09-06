@@ -46,6 +46,7 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "container",
       remotes: {
+        list: "list@https://image-list-micro.vercel.app/remoteEntry.js",
         searchBar:
           "searchBar@https://image-search-micro-rfcr.vercel.app/remoteEntry.js",
       },
